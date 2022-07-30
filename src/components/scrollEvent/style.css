@@ -1,0 +1,87 @@
+/* フェード */
+
+.fader-enter {
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.fader-enter-done {
+    transition: all 1s ease;
+    opacity: 1;
+}
+
+.fader-exit {
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.fader-exit-done {
+    transition: all 1s ease;
+    opacity: 0;
+}
+
+.unvisible-enter {
+    transition: all 1s ease;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.unvisible-enter-done {
+    transition: all 1s ease;
+    opacity: 0;
+    display: none;
+}
+
+.unvisible-exit {
+    transition: all 1s ease;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+.unvisible-exit-done {
+    transition: all 1s ease;
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+}
+
+/* アニメーション */
+
+.move-enter {
+    transition: all 2s ease;
+    font-size: 70px;
+}
+
+.move-enter-done {
+    transition: all 2s ease;
+    font-size: 10px;
+}
+
+.move-exit {
+    transition: all 2s ease;
+    font-size: 10px;
+}
+
+.move-exit-done {
+    transition: all 2s ease;
+    font-size:10px;
+}
+
+.rotation {
+    margin:0;
+    padding: 0;
+}
+
+.box-sample {
+    border: solid;
+    width: 3rem;
+    height: 3rem;
+    padding-right:0;
+    margin:0;
+}
+
+.background-animation {
+    z-index: -1;
+}
