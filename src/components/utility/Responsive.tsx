@@ -23,35 +23,24 @@ import {Theme} from "@material-ui/core";
 // });
 
 // レスポンシブ カスタムフック
-const useSize = () => {
+export const useSize = () => {
     const isMobileSize = useMediaQuery((theme: Theme) =>
         theme.breakpoints.down('sm')
     );
     return { isMobileSize };
 };
 
-interface Props {
-    children: ReactNode;
-}
+// interface Props {
+//     children: ReactNode;
+// }
 
-// PC
-type IsPcType = (props: Props) => JSX.Element
-export const IsPc:IsPcType = (props) => {
-    const { isMobileSize } = useSize();
-    return(
-        <div>
-            {!isMobileSize ? props.children : ''}
-        </div>
-    );
-};
-
-// モバイル
-type IsMobileType = (props: Props) => JSX.Element
-export const IsMobile:IsMobileType = (props) => {
-    const { isMobileSize } = useSize();
-    return(
-        <div>
-            {isMobileSize ? props.children : ''}
-        </div>
-    );
-};
+// // PC
+// type IsPcType = (props: Props) => JSX.Element
+// export const IsPc:IsPcType = (props) => {
+//     const { isMobileSize } = useSize();
+//     return(
+//         <div>
+//             {!isMobileSize ? props.children : ''}
+//         </div>
+//     );
+// };

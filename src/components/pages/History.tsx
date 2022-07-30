@@ -5,7 +5,6 @@
 import React from 'react';
 import Grid from "@mui/material/Grid";
 import './style.css';
-import {IsPc, IsMobile} from "../utility/Responsive";
 // スタイル
 import ScrollFader from '../scrollEvent/Fader';
 import {Typography} from "@mui/material";
@@ -17,7 +16,6 @@ export default () => {
     // ボディ
     return (
         <div>
-            <IsPc>
                 <div style={{width: width * 2}}>
                     <Grid container justifyContent="center">
                         <Grid item xs={6} className="content-flex-center">
@@ -129,7 +127,6 @@ export default () => {
                         </Grid>
                     </Grid>
                 </div>
-            </IsPc>
         </div>
     );
 };
