@@ -11,6 +11,9 @@ import reactIcon from "../../../assets/images/LanguageLogo/react.svg";
 import laravelIcon from "../../../assets/images/LanguageLogo/laravel.svg";
 import vueIcon from "../../../assets/images/LanguageLogo/vue.svg";
 import githubIcon from "../../../assets/images/LanguageLogo/github-icon.svg";
+import wordpressIcon from "../../../assets/images/LanguageLogo/wordpress.png";
+import mysqlIcon from "../../../assets/images/LanguageLogo/mysql.png";
+import dockerIcon from "../../../assets/images/LanguageLogo/docker.png";
 import Sentence from "../../atoms/texts/Sentence";
 
 interface IChartData {
@@ -67,6 +70,15 @@ const Chart = (props: chartData ): JSX.Element => {
                             break;
                         case 'React.js':
                             icon = reactIcon;
+                            break;
+                        case 'WordPress':
+                            icon = wordpressIcon;
+                            break;
+                        case 'MySQL':
+                            icon = mysqlIcon;
+                            break;
+                        case 'Docker':
+                            icon = dockerIcon;
                             break;
                         default:
                             break;

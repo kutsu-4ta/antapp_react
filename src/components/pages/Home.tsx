@@ -64,7 +64,7 @@ export default () => {
                                 <h1>Masafumi Yamashita</h1>
                             </Typography>
                         </Stack>
-                            <Stack mt={50} mr={5} ml={5}>
+                            <Stack mt={10} mr={5} ml={5}>
                                 <InfiniteBanner src={Banner} height={40}/>
                             </Stack>
                         </Grid>

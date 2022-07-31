@@ -96,7 +96,7 @@ const flameworkData = [
         color: "#4169e1"
     },
     {
-        name: "docker",
+        name: "Docker",
         value: 70,
         color: "#4169e1"
     }
