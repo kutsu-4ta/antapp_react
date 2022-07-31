@@ -18,6 +18,7 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import Sentence from "../atoms/texts/Sentence";
 import { MyDialog } from '../CustomDialog/MyDialog';
 import FoxLogo from "../../assets/images/fox-white.svg";
+import Cat from "../../assets/images/contact/cat.png";
 
 const UseForm = () => {
     interface State {
@@ -97,7 +98,16 @@ const UseForm = () => {
                 };
 
                 setIsLoading(true);
+                // 山下に送信
                 await send(serviceID, templateID, template_param).then(
+                    () => {
+                        setIsLoading(false);
+                        openDialog();
+                        setState((state) => ({...state, company: '', fromName: '', email: '', content: '', errors: ''}));
+                    }
+                );
+                // お客さんに確認メール
+                await send(serviceID, 'antapp_site_check', template_param).then(
                     () => {
                         setIsLoading(false);
                         openDialog();
@@ -154,11 +164,11 @@ const UseForm = () => {
     };
     return (
         <>
-            <Grid container justifyContent="center" className="text-center">
+            <Grid container justifyContent="center" className="text-center" sx={{padding:{xs:'30px', sm:'80px'}}}>
                 <Box sx={{display: 'flex', flexWrap: 'wrap'}}>
 
                     <Grid item xs={12}>
-                        <FormControl sx={{m: 1, width: '50vw'}} variant="outlined">
+                        <FormControl sx={{m: 1, width: '100%'}} variant="outlined">
                             <TextField
                                 id="outlined-textarea"
                                 multiline
@@ -177,7 +187,7 @@ const UseForm = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                        <FormControl sx={{m: 1, width: '50vw'}} variant="outlined">
+                        <FormControl sx={{m: 1, width: '100%'}} variant="outlined">
                             <TextField
                                 // required
                                 label="お名前"
@@ -195,7 +205,7 @@ const UseForm = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                        <FormControl sx={{m: 1, width: '50vw'}} variant="outlined">
+                        <FormControl sx={{m: 1, width: '100%'}} variant="outlined">
 
                             <TextField
                                 label="メールアドレス"
@@ -213,7 +223,7 @@ const UseForm = () => {
                     </Grid>
 
                     <Grid item xs={12}>
-                        <FormControl sx={{m: 1, width: '50vw'}}>
+                        <FormControl sx={{m: 1, width: '100%'}}>
                             <TextField
                                 label="お問い合わせ内容"
                                 variant="standard"
@@ -247,7 +257,7 @@ const UseForm = () => {
                 >
                     <DialogTitle>{"お問い合わせありがとうございます！"}</DialogTitle>
                     <DialogContent>
-                        メモ：猫の画像貼る
+                        <img src={Cat} alt='cat' width='100%' />
                         <DialogContentText>
                             <Sentence text={"お問い合わせの内容につきましては、別途ご返信いたします。"}></Sentence>
                             <Sentence text={"何卒よろしくお願いいたします。"}></Sentence>

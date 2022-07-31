@@ -1,9 +1,14 @@
 import styled, {keyframes} from "styled-components";
-import Banner from '../../../assets/images/Home_banner.png';
 
-export const infiniteBanner = () => {
+interface Props{
+    height: number;
+    src: string;
+}
+
+export const infiniteBanner = (props:Props) => {
+    const { height, src } = props;
     return (
-        <Loop src={Banner} height={80} />
+        <Loop src={src} height={height}/>
     );
 };
 

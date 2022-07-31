@@ -1,9 +1,9 @@
 import React, {VFC, useState} from "react";
 import "./style.css";
 import Grid from "@mui/material/Grid";
-import Item from "@mui/material/Grid";
-import {Dialog, Typography} from '@mui/material';
-import YamashitaSite from "../../assets/images/works/yamashitaWebSite.png";
+import {Dialog, Typography, Box} from '@mui/material';
+import portfolioMain from "../../assets/images/works/portfolio/main.png";
+import portfolioWork from "../../assets/images/works/portfolio/work.png";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import DialogContent from "@material-ui/core/DialogContent";
 import DialogContentText from "@material-ui/core/DialogContentText";
@@ -12,64 +12,54 @@ import Button from "@mui/material/Button";
 import ResponsiveDrawer from "../molecules/drawer/ResponsiveDrawer";
 import CustomCarousel from "../atoms/carousels/Carousel";
 
-// TODO:ダイアログを追加するでみられるようにする
-
 const Work: VFC = () => {
-
-    const [isOpenDialog, setIsOpenDialog] = useState(false);
-    const openDialog = () => setIsOpenDialog(true);
-    const closeDialog = () => setIsOpenDialog(false);
+    const [selectItem, setSelectItem] = useState<IItemData | null>(null);
+    const openDialog = (item: IItemData) => {
+        setSelectItem(item)
+    }
+    const closeDialog = () => {
+        setSelectItem(null)
+    }
 
     return (
         <ResponsiveDrawer thisPage='work'>
-        <div>
-            <div>
+        <Box sx={{mt:{xs:'80px', sm:'5px'}}}>
                 <Grid container justifyContent="center" spacing={4} className="text-center">
-                    {itemData.map((item) => {
+                    {itemData.map((item, index) => {
                         return (
-                            <Grid item xs={6}
-                                // onClick={() => {openDialog()}}
-                            >
-                                <Item className="content-work-grid">
+                            <Grid item xs={6}>
+                                <Box className="content-work-grid" onClick={() => {openDialog(item)}}>
                                     <div>
-                                        <img src={item.img}
-                                             style={{height: "100%", width: "100%", border: "solid"}}/>
+                                        <img src={item.img} style={{height: "100%", width: "100%"}}/>
                                     </div>
-                                    <Typography component="p" variant="body1"
-                                                textAlign="center">{item.name}</Typography>
-                                    <Typography component="p" variant="body2"
-                                                textAlign="center">{item.subscribe}</Typography>
-                                    <Dialog
-                                        open={isOpenDialog}
-                                    >
-                                        <DialogTitle>{item.name}の感想</DialogTitle>
-                                        <DialogContent>
-                                            <DialogContentText>
-                                                <Typography component="p" variant="body1" textAlign="center">
-                                                    {item.comment}
-                                                </Typography>
-                                            </DialogContentText>
-                                        </DialogContent>
+                                    <Typography variant="body1" textAlign="center">{item.name}</Typography>
+                                    <Typography variant="body2" textAlign="center">{item.subscribe}</Typography>
+                                </Box>
+
+                                <Dialog open={item === selectItem} onClose={closeDialog}>
+                                    <DialogTitle>{item.name}</DialogTitle>
+                                    <DialogContent>
+                                        <CustomCarousel imageItems={item.images}/>
+                                        <DialogContentText>
+                                            <Typography variant="body1" textAlign="center">
+                                                {item.comment}
+                                            </Typography>
+                                        </DialogContentText>
+
                                         <DialogActions>
-                                            <Button onClick={() => closeDialog} variant="contained">
+                                            <Button onClick={() => closeDialog()} variant='outlined'>
                                                 <text className="text-center">
                                                     閉じる
                                                 </text>
                                             </Button>
                                         </DialogActions>
-                                    </Dialog>
-                                </Item>
+                                    </DialogContent>
+                                </Dialog>
                             </Grid>
                         );
                     })}
                 </Grid>
-            </div>
-            <Grid container>
-                <Grid item xs={12}>
-                    <CustomCarousel/>
-                </Grid>
-            </Grid>
-        </div>
+        </Box>
         </ResponsiveDrawer>
     )
 }
@@ -77,19 +67,20 @@ const Work: VFC = () => {
 export default Work;
 
 
-type itemDataType = {
+type IItemData = {
     img: string;
     name: string;
     subscribe: string;
     comment: string;
+    images: string[]
 }
 
-const itemData:itemDataType[] = [
+const itemData:IItemData[] = [
     {
-        img: YamashitaSite,
+        img: portfolioMain,
         name: 'Yamashitaポートフォリオサイト',
-        subscribe: "このサイトです。React.js × TypeScriptで制作。",
-        comment: 'reactとtypeScriptの学習も兼ねて作りました。reactの状態管理はreduxを使いました。不恰好なサイトですが、今後もっとかっこ良くしていこうと思います。ちょっとパンチのあるサイトにしたいと思い、あえてナビゲーションバーを作らずにスクロールでやってみました。'
+        subscribe: "本サイト。React.js × TypeScriptで制作。",
+        comment: 'React.jsとTypeScriptで作りました。今後ちょっとずつかっこ良くしていきます。',
+        images: [portfolioMain, portfolioWork],
     },
-
 ];

@@ -1,7 +1,7 @@
 import React from "react";
 import "./style.css";
 import Grid from "@mui/material/Grid";
-import { Typography } from '@mui/material';
+import { Typography, Box } from '@mui/material';
 import ResponsiveDrawer from "../molecules/drawer/ResponsiveDrawer";
 
 import UseForm from "./useContact";
@@ -10,7 +10,7 @@ const contact = () => {
     return (
         <>
             <ResponsiveDrawer thisPage='contact'>
-                <div>
+                <Box sx={{mt:{xs:'80px', sm:'5px'}}}>
                     <Grid container justifyContent="center">
                         <Grid item xs={12} className="text-center">
                             <UseForm/>
@@ -27,7 +27,7 @@ const contact = () => {
                             A. もちろんです！<br/><br/>
                         </Typography>
                     </div>
-                </div>
+                </Box>
             </ResponsiveDrawer>
         </>
     );

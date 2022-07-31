@@ -15,10 +15,10 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import FoxLogo from "../../../assets/images/fox-white.svg";
-import aboutLogo from "../../../assets/images/icons/about_human.svg";
-import skillsLogo from "../../../assets/images/icons/skillsets_dev.svg";
-import worksLogo from "../../../assets/images/icons/works_pc_phone.svg";
-import contactLogo from "../../../assets/images/icons/contact_mail.svg";
+import aboutLogo from "../../../assets/images/icons/aboutIcon.svg";
+import skillsLogo from "../../../assets/images/icons/skillIcon.svg";
+import worksLogo from "../../../assets/images/icons/workIcon.svg";
+import contactLogo from "../../../assets/images/icons/contactIcon.svg";
 
 const drawerWidth = 130;
 
