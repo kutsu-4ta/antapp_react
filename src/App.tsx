@@ -9,11 +9,15 @@ import SkillSet from "./components/pages/Skillset";
 import Contact from "./components/pages/Contact";
 import About from "./components/pages/About";
 import Work from "./components/pages/Work";
+import { Helmet } from "react-helmet"
 
 const App: VFC = () => {
 
     return (
         <>
+            <Helmet>
+                <title>Yamashita antapp</title>
+            </Helmet>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Suspense fallback={<CircularProgress/>}><Home/></Suspense>}/>

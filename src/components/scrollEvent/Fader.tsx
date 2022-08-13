@@ -76,21 +76,21 @@ const useScrollFader: UseScrollFader = (props:Props)  => {
     // NOTE:デバッグ用
     const callBacks = {
         onEnter: () => {
-            console.log('enter')
-            console.log(myRef.current?.children)
-            console.log()
+            // console.log('enter')
+            // console.log(myRef.current?.children)
+            // console.log()
         },
         onEntered: () => {
-            console.log('entered')
-            console.log(myRef.current?.children)
+            // console.log('entered')
+            // console.log(myRef.current?.children)
         },
         onExit: () => {
-            console.log('exit')
-            console.log(myRef.current?.children)
+            // console.log('exit')
+            // console.log(myRef.current?.children)
         },
         onExited: () => {
-            console.log('exited')
-            console.log(myRef.current?.children)
+            // console.log('exited')
+            // console.log(myRef.current?.children)
         }
     };
 

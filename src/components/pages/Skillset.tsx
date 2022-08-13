@@ -15,7 +15,7 @@ const SkillSet: SkillSet = () => {
                         <Stack>
                             <Typography fontSize={16} >
                                 実務で使ったことのある言語とフレームワークを表にしました。<br/>
-                                Lv.100は専門書執筆レベルだと想定しています。
+                                自己評価ですが、参考までにご覧ください。
                             </Typography>
                         </Stack>
                     </Grid>

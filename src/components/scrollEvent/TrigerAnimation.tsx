@@ -60,10 +60,10 @@ export const NavAnimation: NavAnimationType = (props: Props): ReactElement => {
                     // scrub: true,
                     // markers: true,
                     onEnter: () => {
-                        console.log('scroll In')
+                        // console.log('scroll In')
                     },
                     onEnterBack: () => {
-                        console.log('scroll Back')
+                        // console.log('scroll Back')
                     },
                     toggleActions: 'play none none reverse'
                 },
@@ -110,10 +110,10 @@ export const ScrollAnimation: ScrollAnimation = (props: AnimationProps): ReactEl
                     start: 'top center', // 開始位置
                     end: 'bottom center',
                     onEnter: () => {
-                        console.log('アバウトIn')
+                        // console.log('アバウトIn')
                     },
                     onEnterBack: () => {
-                        console.log('アバウトBack')
+                        // console.log('アバウトBack')
                     },
                     toggleActions: 'play none none reverse'
                 },
@@ -142,10 +142,10 @@ export const ScrollAnimation: ScrollAnimation = (props: AnimationProps): ReactEl
                         scrub: true,
                         // markers: true,
                         onEnter: () => {
-                            console.log('アバウトIn')
+                            // console.log('アバウトIn')
                         },
                         onEnterBack: () => {
-                            console.log('アバウトBack')
+                            // console.log('アバウトBack')
                         },
                         toggleActions: 'play none none reverse'
                     },
@@ -176,10 +176,10 @@ export const ScrollAnimation: ScrollAnimation = (props: AnimationProps): ReactEl
                         // scrub: true, // スクロールに追従
                         // markers: true, // 確認
                         onEnter: () => {
-                            console.log('スキルセットin')
+                            // console.log('スキルセットin')
                         },
                         onEnterBack: () => {
-                            console.log('スキルセットback')
+                            // console.log('スキルセットback')
                         },
                         toggleActions: 'play none none reverse'
                     },
@@ -210,10 +210,10 @@ export const ScrollAnimation: ScrollAnimation = (props: AnimationProps): ReactEl
                         // scrub: true, // スクロールに追従
                         // markers: true, // 確認
                         onEnter: () => {
-                            console.log('アバウトIn')
+                            // console.log('アバウトIn')
                         },
                         onEnterBack: () => {
-                            console.log('アバウトBack')
+                            // console.log('アバウトBack')
                         },
                         toggleActions: 'play none none reverse'
                     },
@@ -244,10 +244,10 @@ export const ScrollAnimation: ScrollAnimation = (props: AnimationProps): ReactEl
                         // scrub: true, // スクロールに追従
                         // markers: true, // 確認
                         onEnter: () => {
-                            console.log('アバウトIn')
+                            // console.log('アバウトIn')
                         },
                         onEnterBack: () => {
-                            console.log('アバウトBack')
+                            // console.log('アバウトBack')
                         },
                         toggleActions: 'play none none reverse'
                     },

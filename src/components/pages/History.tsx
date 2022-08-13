@@ -10,7 +10,7 @@ import ScrollFader from '../scrollEvent/Fader';
 import {Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 
-console.log('history');
+// console.log('history');
 export default () => {
     const width = window.innerWidth;
     // ボディ

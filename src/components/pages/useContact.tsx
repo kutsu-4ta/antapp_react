@@ -77,7 +77,7 @@ const UseForm = () => {
         })
         setModalConfig(undefined)
         if (ret === 'ok') {
-            console.log('OK押した');
+            // console.log('OK押した');
             setState((state) => ({...state, errors: ''}));
 
             // 送信
@@ -117,7 +117,7 @@ const UseForm = () => {
             };
         }
         if (ret === 'cancel') {
-            console.log('Cancel押した')
+            // console.log('Cancel押した')
         }
     };
 
