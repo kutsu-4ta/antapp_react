@@ -73,8 +73,8 @@ export default function ResponsiveDrawer(props: Props) {
                         <ListItem key={text} disablePadding>
                             <ListItemButton
                                 selected={thisPage===route}
-                                onMouseEnter={()=>console.log('イン')}
-                                onMouseLeave={()=>console.log('アウト')}
+                                // onMouseEnter={()=>console.log('イン')}
+                                // onMouseLeave={()=>console.log('アウト')}
                                 onClick={()=>navigation(`/${route}`)}
                             >
                                 <ListItemIcon>
